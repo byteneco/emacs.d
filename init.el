@@ -2,8 +2,13 @@
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-emacs)
+(require 'init-themes)
 (require 'init-elpa)
 (require 'init-use-package)
 (require 'init-ivy)
 (require 'init-vterm)
 (require 'init-avy)
+(require 'init-ace-window)
+(require 'init-mwim)
+(require 'init-dashboard)
+(require 'init-projectile)
