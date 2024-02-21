@@ -6,3 +6,7 @@
 /custom.el
 *.elc
 /recentf
+/projectile-bookmarks.eld
+/transient
+/.lsp-session-v1
+/.cache
