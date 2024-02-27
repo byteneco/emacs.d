@@ -1,25 +1,22 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
-;; init use-package
-(require 'init-elpa)
-(require 'init-use-package)
+(require 'init-package)
 
 ;; init emacs setting and graphic resource
 (require 'init-emacs)
-(require 'init-themes)
+(require 'init-ui)
 
+;; enhance emacs
 (require 'init-ivy)
-(require 'init-vterm)
 (require 'init-avy)
 (require 'init-ace-window)
-(require 'init-mwim)
 (require 'init-dashboard)
+(require 'init-vterm)
 
 ;; programming
 (require 'init-projectile)
-(require 'init-syntax)
-(require 'init-lsp)
-(require 'init-rust)
 (require 'init-treemacs)
+(require 'init-code)
+(require 'init-rust)
 (require 'init-go)
