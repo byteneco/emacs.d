@@ -52,4 +52,19 @@
   :ensure t
   :after (lsp-mode))
 
+(use-package magit
+  :bind (("C-x g" . magit)))
+
+;; Highlight uncommitted changes using VC
+(use-package diff-hl
+  :ensure t
+  :init
+  (global-diff-hl-mode)
+  (global-diff-hl-show-hunk-mouse-mode)
+  :custom-face
+  (diff-hl-insert ((t (:foreground unspecified :background "#8adf80"))))
+  (diff-hl-delete ((t (:foreground unspecified :background "#ff8f88"))))
+  (diff-hl-change ((t (:foreground unspecified :background "#bfc9ff"))))
+  :hook
+  (dired-mode . diff-hl-dired-mode))
 (provide 'init-code)

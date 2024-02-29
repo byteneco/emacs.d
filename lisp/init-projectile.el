@@ -5,9 +5,4 @@
   (setq projectile-auto-discover nil)
   (setq projectile-track-known-projects-automatically nil))
 
-(use-package counsel-projectile
-  :ensure t
-  :after (projectile)
-  :init (counsel-projectile-mode))
-
 (provide 'init-projectile)
