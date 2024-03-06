@@ -13,6 +13,7 @@
 ;; init emacs setting and graphic resource
 (require 'init-emacs)
 (require 'init-ui)
+(require 'init-keys)
 
 ;; enhance emacs
 (require 'init-ivy)
