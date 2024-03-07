@@ -49,6 +49,8 @@
 
 (use-package lsp-ivy
   :ensure t
+  :custom
+  (lsp-ivy-show-symbol-kind nil)
   :after (lsp-mode))
 
 (use-package magit
