@@ -15,10 +15,6 @@
    ("C-x b" . 'ivy-switch-buffer)
    ("C-c v" . 'ivy-push-view)
    ("C-c s" . 'ivy-switch-view)
-   ("C-c V" . 'ivy-pop-view)
-   ("C-x C-@" . 'counsel-mark-ring)
-   ("C-x C-SPC" . 'counsel-mark-ring)
-   :map minibuffer-local-map
-   ("C-r" . counsel-minibuffer-history)))
+   ("C-c V" . 'ivy-pop-view)))
 
 (provide 'init-ivy)

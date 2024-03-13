@@ -25,6 +25,8 @@
 ;; programming
 (require 'init-projectile)
 (require 'init-treemacs)
+(require 'init-treesit)
 (require 'init-code)
 (require 'init-rust)
 (require 'init-go)
+(require 'init-typescript)

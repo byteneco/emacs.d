@@ -36,7 +36,7 @@
   (lsp-mode . lsp-enable-which-key-integration)
   :config
   (setq lsp-completion-provider :none)
-  (setq lsp-headerline-breadcrumb-enable t))
+  (setq lsp-headerline-breadcrumb-enable nil))
 
 (use-package lsp-ui
   :ensure t
