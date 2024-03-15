@@ -20,6 +20,7 @@
  :prefix "C-o"
  "d" 'lsp-ui-doc-glance ;; show doc
  "m" 'lsp-ui-imenu      ;; show imenu
+ "s" 'counsel-projectile-ag ;; projectile content search
  )
 
 (global-set-key [C-return] "\C-e\C-e\C-m")
