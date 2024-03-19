@@ -21,10 +21,10 @@
 (require 'init-ace-window)
 (require 'init-dashboard)
 (require 'init-vterm)
+(require 'init-ag)
 
 ;; programming
 (require 'init-projectile)
-(require 'init-treemacs)
 (require 'init-treesit)
 (require 'init-code)
 (require 'init-rust)

@@ -30,8 +30,8 @@
   :ensure t
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l"
-	lsp-file-watch-threshold 500)
+  (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-enable-file-watchers nil)
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
   :config
@@ -48,6 +48,7 @@
   :after (lsp-mode))
 
 (use-package magit
+  :ensure t
   :bind (("C-x g" . magit)))
 
 ;; Highlight uncommitted changes using VC

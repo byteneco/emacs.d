@@ -7,6 +7,10 @@
   ;; (nerd-icons-font-family "Symbols Nerd Font Mono")
   )
 
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p))
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
@@ -15,9 +19,9 @@
   :ensure t
   :config
   ;; Global settings (defaults)
-  (setq doom-themes-enable-bold nil    ; if nil, bold is universally disabled
+  (setq doom-themes-enable-bold nil    ; if nil, bold is universally disabld
 	doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-palenight t)
+  (load-theme 'doom-moonlight t)
   (doom-themes-treemacs-config))
 
 (provide 'init-ui)
