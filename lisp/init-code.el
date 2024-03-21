@@ -23,6 +23,8 @@
   :ensure t
   :config
   (setq truncate-lines nil)
+  :custom
+  (flycheck-indication-mode nil)
   :hook
   (prog-mode . flycheck-mode))
 
@@ -62,5 +64,7 @@
   (diff-hl-delete ((t (:foreground unspecified :background "#ff8f88"))))
   (diff-hl-change ((t (:foreground unspecified :background "#bfc9ff"))))
   :hook
-  (dired-mode . diff-hl-dired-mode))
+  (dired-mode . diff-hl-dired-mode)
+  (magit-pre-refresh . diff-hl-magit-pre-refresh)
+  (magit-post-refresh . diff-hl-magit-post-refresh))
 (provide 'init-code)
