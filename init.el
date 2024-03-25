@@ -30,3 +30,4 @@
 (require 'init-rust)
 (require 'init-go)
 (require 'init-typescript)
+(require 'init-ruby)
