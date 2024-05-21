@@ -11,4 +11,9 @@
 (auto-save-visited-mode)
 (electric-pair-mode)
 
+(use-package dirvish
+  :ensure t
+  :config
+  (dirvish-override-dired-mode))
+
 (provide 'init-emacs)

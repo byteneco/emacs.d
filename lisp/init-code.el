@@ -68,3 +68,4 @@
   (magit-pre-refresh . diff-hl-magit-pre-refresh)
   (magit-post-refresh . diff-hl-magit-post-refresh))
 (provide 'init-code)
+;;; init-code.el ends here
