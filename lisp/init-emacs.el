@@ -11,9 +11,16 @@
 (auto-save-visited-mode)
 (electric-pair-mode)
 
-(use-package dirvish
+(use-package avy
   :ensure t
+  :bind (("C-'" . avy-goto-char-timer))
   :config
-  (dirvish-override-dired-mode))
+  (setq avy-background t
+        avy-all-windows t
+        avy-timeout-seconds 0.3))
+
+(use-package ace-window
+  :ensure t
+  :bind (("C-x o" . 'ace-window)))
 
 (provide 'init-emacs)

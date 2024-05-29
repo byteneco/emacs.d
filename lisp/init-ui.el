@@ -19,9 +19,8 @@
   :ensure t
   :config
   ;; Global settings (defaults)
-  (setq doom-themes-enable-bold nil    ; if nil, bold is universally disabld
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabld
 	doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-moonlight t)
-  (doom-themes-treemacs-config))
+  (load-theme 'doom-nord t))
 
 (provide 'init-ui)

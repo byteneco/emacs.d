@@ -3,12 +3,12 @@
   :config
   (dashboard-setup-startup-hook)
   :init
-  (setq dashboard-banner-logo-title "Have a nice day.")
-  (setq dashboard-projects-backend 'projectile)
+  (setq dashboard-banner-logo-title "WoW")
+  (setq dashboard-projects-backend 'project-el)
   (setq dashboard-startup-banner 'official)
-  (setq dashboard-items '((recents  . 5)
-			  (projects . 5)
-			  (bookmarks . 5)))
+  (setq dashboard-items '((recents  . 8)
+			  (projects . 4)
+			  (bookmarks . 3)))
   (setq dashboard-display-icons-p t)
   (setq dashboard-icon-type 'nerd-icons)
   (setq dashboard-set-heading-icons t)

@@ -16,15 +16,13 @@
 (require 'init-keys)
 
 ;; enhance emacs
-(require 'init-ivy)
-(require 'init-avy)
-(require 'init-ace-window)
+(require 'init-minibuffer)
+(require 'init-project)
 (require 'init-dashboard)
 (require 'init-vterm)
 (require 'init-ag)
 
 ;; programming
-(require 'init-projectile)
 (require 'init-treesit)
 (require 'init-code)
 (require 'init-rust)

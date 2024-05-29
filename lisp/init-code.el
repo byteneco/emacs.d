@@ -9,10 +9,6 @@
   :config
   (yas-global-mode 1))
 
-(use-package yasnippet-snippets
-  :ensure t
-  :after yasnippet)
-
 (use-package company
   :ensure t
   :init (global-company-mode)
@@ -21,6 +17,7 @@
   (setq company-tooltip-align-annotations t)
   (setq company-idle-delay 0.1)
   (setq company-selection-wrap-around t)
+  (setq company-transformers '(company-sort-by-occurrence))
   (add-to-list 'company-backends '(company-yasnippet company-capf)))
 
 (use-package company-box
@@ -45,6 +42,7 @@
   (setq lsp-enable-file-watchers nil)
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
+  :bind (("C-\." . lsp-execute-code-action))
   :config
   (setq lsp-completion-provider :none)
   (setq lsp-headerline-breadcrumb-enable nil))
@@ -53,10 +51,6 @@
   :ensure t
   :custom
   (lsp-ui-doc-position 'at-point))
-
-(use-package lsp-ivy
-  :ensure t
-  :after (lsp-mode))
 
 (use-package magit
   :ensure t
