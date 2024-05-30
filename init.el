@@ -19,8 +19,7 @@
 (require 'init-minibuffer)
 (require 'init-project)
 (require 'init-dashboard)
-(require 'init-vterm)
-(require 'init-ag)
+(require 'init-meow)
 
 ;; programming
 (require 'init-treesit)
