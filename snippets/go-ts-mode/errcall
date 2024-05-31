@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: errcall
+# key: errcall
+# --
+if $2 err := ${1:body}; err != nil {
+  $0
+}
