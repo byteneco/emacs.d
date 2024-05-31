@@ -22,7 +22,6 @@
 (require 'init-meow)
 
 ;; programming
-(require 'init-treesit)
 (require 'init-code)
 (require 'init-rust)
 (require 'init-go)

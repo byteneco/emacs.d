@@ -10,6 +10,7 @@
 (when (display-graphic-p) (toggle-scroll-bar -1))
 (auto-save-visited-mode)
 (electric-pair-mode)
+(set-face-attribute 'default nil :height 140)
 
 (use-package avy
   :ensure t

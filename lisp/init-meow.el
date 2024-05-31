@@ -1,17 +1,9 @@
-(use-package meow
-  :ensure t
-  :config
-  (defun meow-setup ()
+(defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
   (setq meow-use-cursor-position-hack t)
   (meow-motion-overwrite-define-key
-   '("j" . meow-next)
-   '("k" . meow-prev)
    '("<escape>" . ignore))
   (meow-leader-define-key
-   ;; SPC j/k will run the original command in MOTION state.
-   '("j" . "H-j")
-   '("k" . "H-k")
    ;; Use SPC (0-9) for digit arguments.
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)
@@ -43,7 +35,6 @@
    '("[" . meow-beginning-of-thing)
    '("]" . meow-end-of-thing)
    '("a" . meow-append)
-   '("A" . meow-line)
    '("b" . meow-back-word)
    '("B" . meow-back-symbol)
    '("c" . meow-change)
@@ -56,7 +47,6 @@
    '("h" . meow-left)
    '("H" . meow-left-expand)
    '("i" . meow-insert)
-   '("I" . meow-open-above)
    '("j" . meow-next)
    '("J" . meow-next-expand)
    '("k" . meow-prev)
@@ -64,24 +54,33 @@
    '("l" . meow-right)
    '("L" . meow-right-expand)
    '("m" . meow-join)
-   '("n" . meow-search)
+   '("n" . ignore)
    '("o" . meow-open-below)
    '("O" . meow-open-above)
    '("p" . meow-yank)
    '("P" . meow-yank-pop)
    '("q" . meow-quit)
    '("r" . meow-replace)
+   '("s" . consult-line)
    '("R" . meow-swap-grab)
    '("t" . meow-till)
    '("u" . meow-undo)
+   '("v" . scroll-up-command)
+   '("V" . scroll-down-command)   
    '("w" . meow-mark-word)
    '("W" . meow-mark-symbol)
-   '("x" . meow-line)
+   '("x" . meow-line-expand)
    '("y" . meow-save)
    '("Y" . meow-sync-grab)
    '("z" . meow-pop-selection)
-   '("'" . repeat)
+   '("/" . avy-goto-char-timer)
+   '("'" . meow-replace)
    '("<escape>" . ignore)))
+
+(use-package meow
+  :ensure t
+  :config
+  (setq meow-expand-hint-counts nil)
   (meow-setup)
   (meow-global-mode)
   )

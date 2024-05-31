@@ -1,8 +1,8 @@
-(use-package mwim
-  :ensure t
-  :bind
-  ("C-a" . mwim-beginning-of-code-or-line)
-  ("C-e" . mwim-end-of-code-or-line))
+(use-package treesit
+  :when (and (fboundp 'treesit-available-p)
+         (treesit-available-p))
+  :config
+  (setq treesit-font-lock-level 4))
 
 (use-package yasnippet
   :ensure t
@@ -15,10 +15,10 @@
   :config
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
-  (setq company-idle-delay 0.1)
+  (setq company-idle-delay 0)
   (setq company-selection-wrap-around t)
   (setq company-transformers '(company-sort-by-occurrence))
-  (add-to-list 'company-backends '(company-yasnippet company-capf)))
+  (setq company-backends '((company-yasnippet company-capf))))
 
 (use-package company-box
   :ensure t
