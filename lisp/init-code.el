@@ -62,10 +62,11 @@
   :init
   (global-diff-hl-mode)
   (global-diff-hl-show-hunk-mouse-mode)
+  
   :custom-face
-  (diff-hl-insert ((t (:foreground unspecified :background "#8adf80"))))
-  (diff-hl-delete ((t (:foreground unspecified :background "#ff8f88"))))
-  (diff-hl-change ((t (:foreground unspecified :background "#bfc9ff"))))
+  (diff-hl-insert ((t (:foreground "#8ec07c" :background "#8ec07c"))))
+  (diff-hl-delete ((t (:foreground "#fb4934" :background "#e74c3c"))))
+  (diff-hl-change ((t (:foreground "#3a81c3" :background "#3a81c3"))))
   :hook
   (dired-mode . diff-hl-dired-mode)
   (magit-pre-refresh . diff-hl-magit-pre-refresh)

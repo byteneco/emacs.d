@@ -68,7 +68,7 @@
    '("t" . meow-till)
    '("u" . meow-undo)
    '("v" . scroll-up-command)
-   '("V" . scroll-down-command)   
+   '("V" . scroll-down-command)
    '("w" . meow-mark-word)
    '("W" . meow-mark-symbol)
    '("x" . meow-line-expand)
