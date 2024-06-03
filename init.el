@@ -20,10 +20,12 @@
 (require 'init-project)
 (require 'init-dashboard)
 (require 'init-meow)
+(require 'init-org)
 
 ;; programming
 (require 'init-code)
-(require 'init-rust)
 (require 'init-go)
+(require 'init-elixir)
+(require 'init-rust)
 (require 'init-typescript)
 (require 'init-ruby)
