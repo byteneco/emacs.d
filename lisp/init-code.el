@@ -23,7 +23,9 @@
 (use-package company-box
   :ensure t
   :if window-system
-  :hook (company-mode . company-box-mode))
+  :hook (company-mode . company-box-mode)
+  :config
+  (setq company-box-backends-colors nil))
 
 (use-package flycheck
   :ensure t
