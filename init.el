@@ -16,9 +16,9 @@
 (require 'init-keys)
 
 ;; enhance emacs
+(require 'init-workspace)
 (require 'init-minibuffer)
 (require 'init-project)
-(require 'init-workspace)
 (require 'init-dashboard)
 (require 'init-meow)
 (require 'init-org)

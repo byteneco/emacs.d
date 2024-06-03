@@ -1,7 +1,5 @@
 (use-package perspective
   :ensure t
-  :hook
-  (kill-emacs . persp-state-save)
   :bind
   ("C-x C-b" . persp-list-buffers)         ; or use a nicer switcher, see below
   :custom
