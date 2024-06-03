@@ -6,6 +6,6 @@
 (use-package general
   :ensure t)
 
-(global-set-key [C-return] "\C-e\C-e\C-m")
+(global-set-key (kbd "C-x C-0") 'delete-window)
 
 (provide 'init-keys)

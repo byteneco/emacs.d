@@ -64,6 +64,7 @@
    '("q" . meow-quit)
    '("r" . meow-replace)
    '("s" . consult-line)
+   '("S" . diff-hl-show-hunk)
    '("R" . meow-swap-grab)
    '("t" . meow-till)
    '("u" . meow-undo)

@@ -22,6 +22,7 @@
 
 (use-package ace-window
   :ensure t
-  :bind (("C-x o" . 'ace-window)))
+  :bind (("C-x o" . 'ace-window)
+	 ("C-x C-o" . 'ace-window)))
 
 (provide 'init-emacs)

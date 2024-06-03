@@ -7,5 +7,6 @@
   '(consult-ripgrep "Find regexp")
   (pcase-lambda (`(,cmd _)) (eq cmd #'project-find-regexp))
   project-switch-commands)
+(global-set-key (kbd "C-x C-p") 'project-prefix-map)
 
 (provide 'init-project)
