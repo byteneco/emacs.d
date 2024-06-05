@@ -56,7 +56,9 @@
 
 (use-package magit
   :ensure t
-  :bind (("C-x g" . magit)))
+  :bind (("C-x g" . magit)
+	 :map magit-file-section-map
+	 ("RET" . magit-diff-visit-file-other-window)))
 
 ;; Highlight uncommitted changes using VC
 (use-package diff-hl
