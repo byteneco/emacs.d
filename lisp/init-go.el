@@ -213,6 +213,7 @@ you save any file, kind of defeating the point of autoloading."
 (use-package go-ts-mode
   :straight nil
   :hook
+  (go-ts-mode . lsp-deferred)
   (go-ts-mode . (lambda () (setq tab-width 4)))
   (before-save . gofmt-before-save)
   :mode "\\.go\\'"
