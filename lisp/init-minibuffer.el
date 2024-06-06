@@ -1,10 +1,8 @@
 (use-package vertico
-  :ensure t
   :init
   (vertico-mode))
 
 (use-package orderless
-  :ensure t
   :init
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
@@ -12,14 +10,12 @@
 
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
-  :ensure t
   :bind (:map minibuffer-local-map
          ("M-A" . marginalia-cycle))
   :init
 (marginalia-mode))
 
 (use-package consult
-  :ensure t
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings in `mode-specific-map'
          ("C-c M-x" . consult-mode-command)

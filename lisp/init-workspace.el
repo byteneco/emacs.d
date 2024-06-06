@@ -1,5 +1,4 @@
 (use-package perspective
-  :ensure t
   :bind
   ("C-x C-b" . persp-list-buffers)         ; or use a nicer switcher, see below
   :custom

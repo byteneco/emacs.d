@@ -1,16 +1,15 @@
 (use-package treesit
+  :straight nil
   :when (and (fboundp 'treesit-available-p)
          (treesit-available-p))
   :config
   (setq treesit-font-lock-level 4))
 
 (use-package yasnippet
-  :ensure t
   :config
   (yas-global-mode 1))
 
 (use-package company
-  :ensure t
   :init (global-company-mode)
   :config
   (setq company-minimum-prefix-length 1)
@@ -21,14 +20,12 @@
   (setq company-backends '((company-yasnippet company-capf))))
 
 (use-package company-box
-  :ensure t
   :if window-system
   :hook (company-mode . company-box-mode)
   :config
   (setq company-box-backends-colors nil))
 
 (use-package flycheck
-  :ensure t
   :config
   (setq truncate-lines nil)
   :custom
@@ -48,21 +45,20 @@
   :config
   (setq lsp-completion-provider :none)
   (setq lsp-headerline-breadcrumb-enable nil))
-
-(use-package lsp-ui
-  :ensure t
-  :custom
-  (lsp-ui-doc-position 'at-point))
+;; (use-package lsp-bridge
+;;   :straight '(lsp-bridge :type git :host github :repo "manateelazycat/lsp-bridge"
+;;             :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
+;;             :build (:not compile))
+;;   :init
+;;   (global-lsp-bridge-mode))
 
 (use-package magit
-  :ensure t
   :bind (("C-x g" . magit)
 	 :map magit-file-section-map
 	 ("RET" . magit-diff-visit-file-other-window)))
 
 ;; Highlight uncommitted changes using VC
 (use-package diff-hl
-  :ensure t
   :init
   (global-diff-hl-mode)
   (global-diff-hl-show-hunk-mouse-mode)

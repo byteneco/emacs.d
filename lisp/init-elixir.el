@@ -1,5 +1,4 @@
 (use-package heex-ts-mode
-  :ensure t
   :mode (("\\.heex\\'" . heex-ts-mode))
   :hook
   (heex-ts-mode . lsp-deferred)
@@ -11,7 +10,6 @@
   )
 
 (use-package elixir-ts-mode
-  :ensure t
   :mode (("\\.ex\\'" . elixir-ts-mode)
 	 ("\\.exs\\'" . elixir-ts-mode)
 	 )

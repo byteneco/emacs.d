@@ -1,6 +1,5 @@
 ;;; need intsall binary https://rust-analyzer.github.io/manual.html#installation
 (use-package rust-mode
-  :ensure t
   :functions dap-register-debug-template
   :bind
   ("C-c C-c" . rust-run)
@@ -20,7 +19,6 @@
 ;;				     :cwd nil)))
 
 (use-package cargo
-  :ensure t
   :hook
   (rust-mode . cargo-minor-mode))
 

@@ -1,5 +1,4 @@
 (use-package exec-path-from-shell
-  :ensure t
   :if (memq window-system '(mac ns x))
   :config
   (setq exec-path-from-shell-variables '("PATH" "GOPATH"))
@@ -13,7 +12,6 @@
 (set-face-attribute 'default nil :height 140)
 
 (use-package avy
-  :ensure t
   :bind (("C-'" . avy-goto-char-timer))
   :config
   (setq avy-background t
@@ -21,7 +19,6 @@
         avy-timeout-seconds 0.3))
 
 (use-package ace-window
-  :ensure t
   :bind (("C-x o" . 'ace-window)
 	 ("C-x C-o" . 'ace-window)))
 

@@ -8,7 +8,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
-(require 'init-package)
+(require 'init-straight)
 
 ;; init emacs setting and graphic resource
 (require 'init-emacs)
@@ -26,7 +26,7 @@
 ;; programming
 (require 'init-code)
 (require 'init-go)
-(require 'init-elixir)
+;; (require 'init-elixir)
 (require 'init-rust)
 (require 'init-typescript)
 (require 'init-ruby)
