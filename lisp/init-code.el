@@ -14,7 +14,7 @@
   :config
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-align-annotations t)
-  (setq company-idle-delay 0)
+  (setq company-idle-delay 0.2)
   (setq company-selection-wrap-around t)
   (setq company-transformers '(company-sort-by-occurrence))
   (setq company-backends '((company-yasnippet company-capf))))
