@@ -28,13 +28,16 @@
 (use-package flycheck
   :config
   (setq truncate-lines nil)
+  (custom-set-faces
+   '(flycheck-error ((t (:underline (:style wave :color "#ff3366") :background nil))))
+   '(flycheck-warning ((t (:underline (:style wave :color "#ffcc55") :background nil))))
+   '(flycheck-info ((t (:underline (:style wave :color "#44aaee") :background nil)))))
   :custom
   (flycheck-indication-mode nil)
   :hook
   (prog-mode . flycheck-mode))
 
 (use-package lsp-mode
-  :ensure t
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l")
@@ -62,7 +65,6 @@
   (diff-hl-delete ((t (:foreground "#fb4934" :background "#e74c3c"))))
   (diff-hl-change ((t (:foreground "#3a81c3" :background "#3a81c3"))))
   :hook
-  (dired-mode . diff-hl-dired-mode)
   (magit-pre-refresh . diff-hl-magit-pre-refresh)
   (magit-post-refresh . diff-hl-magit-post-refresh))
 (provide 'init-code)

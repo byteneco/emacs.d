@@ -26,7 +26,8 @@
 ;; programming
 (require 'init-code)
 (require 'init-go)
-;; (require 'init-elixir)
+(require 'init-json)
+(require 'init-elixir)
 (require 'init-rust)
 (require 'init-typescript)
 (require 'init-ruby)
