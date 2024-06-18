@@ -1,3 +1,26 @@
+(use-package go-mod-ts-mode
+  :straight nil
+  :hook
+  (go-mod-ts-mode . (lambda () (setq tab-width 4)))
+  :mode "go\\.mod\\'"
+  :init
+  (add-to-list 'treesit-language-source-alist '(gomod "https://github.com/camdencheek/tree-sitter-go-mod"))
+  )
+
+(use-package go-ts-mode
+  :straight nil
+  :hook
+  (go-ts-mode . lsp-deferred)
+  (go-ts-mode . (lambda () (setq tab-width 4)))
+  (before-save . gofmt-before-save)
+  :mode "\\.go\\'"
+  :init
+  (add-to-list 'treesit-language-source-alist '(go "https://github.com/tree-sitter/tree-sitter-go" "v0.20.0"))
+  :config
+  (setq gofmt-command "goimports")
+  (setq go-ts-mode-indent-offset 4)
+  )
+
 (defcustom gofmt-command "gofmt"
   "The 'gofmt' command.
 Some users may replace this with 'goimports'
@@ -200,28 +223,5 @@ you save any file, kind of defeating the point of autoloading."
 
   (interactive)
   (when (eq major-mode 'go-ts-mode) (gofmt))) ;NOTE: Use tree-sitter implementation of go
-
-(use-package go-mod-ts-mode
-  :straight nil
-  :hook
-  (go-mod-ts-mode . (lambda () (setq tab-width 4)))
-  :mode "go\\.mod\\'"
-  :init
-  (add-to-list 'treesit-language-source-alist '(gomod "https://github.com/camdencheek/tree-sitter-go-mod"))
-  )
-
-(use-package go-ts-mode
-  :straight nil
-  :hook
-  (go-ts-mode . lsp-deferred)
-  (go-ts-mode . (lambda () (setq tab-width 4)))
-  (before-save . gofmt-before-save)
-  :mode "\\.go\\'"
-  :init
-  (add-to-list 'treesit-language-source-alist '(go "https://github.com/tree-sitter/tree-sitter-go" "v0.20.0"))
-  :config
-  (setq gofmt-command "goimports")
-  (setq go-ts-mode-indent-offset 4)
-  )
 
 (provide 'init-go)

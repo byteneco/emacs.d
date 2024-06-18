@@ -1,6 +1,5 @@
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
-  (setq meow-use-cursor-position-hack t)
   (meow-motion-overwrite-define-key
    '("<escape>" . ignore))
   (meow-leader-define-key
@@ -18,6 +17,8 @@
    '("/" . meow-keypad-describe-key)
    '("!" . "C-c !")
    '("w" . "C-c C-w")
+   '("p" . "C-x p")
+   '("d" . "C-c C-d")
    '("s" . diff-hl-show-hunk)
    '("?" . meow-cheatsheet))
   (meow-normal-define-key

@@ -9,6 +9,7 @@
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-straight)
+(require 'use-package)
 
 ;; init emacs setting and graphic resource
 (require 'init-emacs)
