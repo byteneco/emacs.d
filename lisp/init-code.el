@@ -9,15 +9,15 @@
   :config
   (yas-global-mode 1))
 
-(use-package company
-  :init (global-company-mode)
-  :config
-  (setq company-minimum-prefix-length 1)
-  (setq company-tooltip-align-annotations t)
-  (setq company-idle-delay 0.2)
-  (setq company-selection-wrap-around t)
-  (setq company-transformers '(company-sort-by-occurrence))
-  (setq company-backends '((company-yasnippet company-capf))))
+;; (use-package company
+;;   :init (global-company-mode)
+;;   :config
+;;   (setq company-minimum-prefix-length 1)
+;;   (setq company-tooltip-align-annotations t)
+;;   (setq company-idle-delay 0)
+;;   (setq company-selection-wrap-around t)
+;;   (setq company-transformers '(company-sort-by-occurrence))
+;;   (setq company-backends '((company-yasnippet company-capf))))
 
 (use-package company-box
   :if window-system
@@ -37,17 +37,26 @@
   :hook
   (prog-mode . flycheck-mode))
 
-(use-package lsp-mode
+(use-package lsp-bridge
+  :straight '(lsp-bridge :type git :host github :repo "manateelazycat/lsp-bridge"
+            :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
+            :build (:not compile))
+  :custom
+  (acm-candidate-match-function 'orderless-prefixes)
   :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
-  (setq lsp-enable-file-watchers nil)
-  :hook
-  (lsp-mode . lsp-enable-which-key-integration)
-  :bind (("C-\." . lsp-execute-code-action))
-  :config
-  (setq lsp-completion-provider :none)
-  (setq lsp-headerline-breadcrumb-enable nil))
+  (global-lsp-bridge-mode))
+
+;; (use-package lsp-mode
+;;   :init
+;;   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+;;   (setq lsp-keymap-prefix "C-c l")
+;;   (setq lsp-enable-file-watchers nil)
+;;   :hook
+;;   (lsp-mode . lsp-enable-which-key-integration)
+;;   :bind (("C-\." . lsp-execute-code-action))
+;;   :config
+;;   (setq lsp-completion-provider :none)
+;;   (setq lsp-headerline-breadcrumb-enable nil))
 
 (use-package magit
   :bind (("C-x g" . magit)
