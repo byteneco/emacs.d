@@ -8,7 +8,7 @@
   :init
   (persp-mode)
   :config
-  (require 'my-funcs)
+  (require 'cfg-common)
   (my/create-file-with-parent persp-state-default-file)
   (with-eval-after-load 'consult
     (consult-customize consult--source-buffer :hidden t :default nil)

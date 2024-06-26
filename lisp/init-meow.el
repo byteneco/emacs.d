@@ -64,7 +64,7 @@
    '("l" . meow-right)
    '("L" . meow-right-expand)
    '("m" . meow-join)
-   '("M" . ignore)
+   '("M" . lsp-find-implementation)
    '("n" . ignore)
    '("N" . ignore)
    '("o" . meow-open-below)

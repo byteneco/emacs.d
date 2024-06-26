@@ -25,13 +25,12 @@
 (use-package dirvish
   :init
   (dirvish-override-dired-mode)
+  :custom
+  (dirvish-attributes '(all-the-icons file-time file-size collapse subtree-state))
   :config
   (setq insert-directory-program "gls")
   (setq dirvish-mode-line-format
         '(:left (sort symlink) :right (omit yank index)))
-  (setq dirvish-attributes
-        '(all-the-icons file-time file-size collapse subtree-state vc-state))
-  (setq delete-by-moving-to-trash t)
   (setq dired-listing-switches
         "-l --almost-all --human-readable --group-directories-first --no-group")
   :bind ; Bind `dirvish|dirvish-side|dirvish-dwim' as you see fit

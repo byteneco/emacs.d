@@ -4,5 +4,4 @@
   (unless (file-exists-p file-path)
     (write-region "" nil file-path)))
 
-
-(provide 'my-funcs)
+(provide 'cfg-common)

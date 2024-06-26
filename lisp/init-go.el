@@ -2,7 +2,6 @@
   :straight nil
   :hook
   (go-mod-ts-mode . (lambda () (setq tab-width 4)))
-  (go-mod-ts-mode . lsp-deferred)
   :mode "go\\.mod\\'"
   :init
   (add-to-list 'treesit-language-source-alist '(gomod "https://github.com/camdencheek/tree-sitter-go-mod"))
@@ -12,7 +11,6 @@
   :straight nil
   :hook
   (go-ts-mode . (lambda () (setq tab-width 4)))
-  (go-ts-mode . lsp-deferred)
   (before-save . gofmt-before-save)
   :mode "\\.go\\'"
   :init

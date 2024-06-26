@@ -29,9 +29,9 @@
   :config
   (setq truncate-lines nil)
   (custom-set-faces
-   '(flycheck-error ((t (:underline (:style wave :color "#ff3366") :background nil))))
+   '(flycheck-error ((t (:underline (:style wave :color "#e74c3c") :background nil))))
    '(flycheck-warning ((t (:underline (:style wave :color "#ffcc55") :background nil))))
-   '(flycheck-info ((t (:underline (:style wave :color "#44aaee") :background nil)))))
+   '(flycheck-info ((t (:underline (:style wave :color "#3a81c3") :background nil)))))
   :custom
   (flycheck-indication-mode nil)
   :hook
@@ -39,15 +39,27 @@
 
 (use-package lsp-mode
   :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-enable-file-watchers nil)
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
+  (go-ts-mode . lsp-deferred)
+  (go-mod-ts-mode . lsp-deferred)
+  (heex-ts-mode . lsp-deferred)
   :bind (("C-\." . lsp-execute-code-action))
   :config
   (setq lsp-completion-provider :none)
   (setq lsp-headerline-breadcrumb-enable nil))
+
+(use-package dap-mode
+  :after lsp-mode
+  :custom
+  (dap-auto-configure-features '(sessions locals controls tooltip))
+  :config
+  (dap-mode 1)
+  (dap-auto-configure-mode 1)
+  (require 'dap-hydra)
+  (require 'dap-dlv-go))
 
 (use-package magit
   :bind (("C-x g" . magit)
@@ -61,7 +73,7 @@
   (global-diff-hl-show-hunk-mouse-mode)
   
   :custom-face
-  (diff-hl-insert ((t (:foreground "#8ec07c" :background "#8ec07c"))))
+  (diff-hl-insert ((t (:foreground "#b8bb26" :background "#b8bb26"))))
   (diff-hl-delete ((t (:foreground "#fb4934" :background "#e74c3c"))))
   (diff-hl-change ((t (:foreground "#3a81c3" :background "#3a81c3"))))
   :hook

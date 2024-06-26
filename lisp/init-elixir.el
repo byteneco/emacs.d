@@ -1,7 +1,7 @@
 (use-package heex-ts-mode
   :mode (("\\.heex\\'" . heex-ts-mode))
   :hook
-  (elixir-ts-mode . (lambda () (setq tab-width 2)))
+  (heex-ts-mode . (lambda () (setq tab-width 2)))
   :init
   (add-to-list 'treesit-language-source-alist '(heex "https://github.com/phoenixframework/tree-sitter-heex"))
   :config
@@ -14,6 +14,7 @@
 	 )
   :hook
   (elixir-ts-mode . (lambda () (setq tab-width 2)))
+  (elixir-ts-mode . lsp-deferred)
   :init
   (add-to-list 'treesit-language-source-alist '(elixir "https://github.com/elixir-lang/tree-sitter-elixir"))
   :config
