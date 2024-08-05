@@ -15,3 +15,5 @@
 /eshell
 /straight
 /workspaces
+.dap-breakpoints
+dap-ui-repl-go-history

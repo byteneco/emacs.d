@@ -54,7 +54,7 @@
 (use-package dap-mode
   :after lsp-mode
   :custom
-  (dap-auto-configure-features '(sessions locals controls tooltip))
+  (dap-auto-configure-features '(sessions))
   :config
   (dap-mode 1)
   (dap-auto-configure-mode 1)
