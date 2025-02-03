@@ -1,7 +1,7 @@
 (use-package treesit
   :straight nil
   :when (and (fboundp 'treesit-available-p)
-         (treesit-available-p))
+             (treesit-available-p))
   :config
   (setq treesit-font-lock-level 4))
 
@@ -11,12 +11,16 @@
 
 (use-package lsp-bridge
   :straight '(lsp-bridge :type git :host github :repo "manateelazycat/lsp-bridge"
-            :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
-            :build (:not compile))
+			 :files (:defaults "*.el" "*.py" "acm" "core" "langserver" "multiserver" "resources")
+			 :build (:not compile))
   :config
   (setq lsp-bridge-enable-log nil)
   :init
   (global-lsp-bridge-mode))
+
+(use-package apheleia
+  :config
+  (apheleia-global-mode +1))
 
 (use-package magit
   :bind (("C-x g" . magit)
