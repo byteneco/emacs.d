@@ -2,4 +2,4 @@
 # name: tagjson
 # key: tagjson
 # --
-`json:"${1}"`
+`json:"$1"`

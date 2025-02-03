@@ -6,14 +6,14 @@
 (setq process-adaptive-read-buffering nil)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/codes" user-emacs-directory))
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
-(require 'init-straight)
 (require 'use-package)
+(require 'init-straight)
 
 ;; init emacs setting and graphic resource
 (require 'init-emacs)
-(require 'init-ui)
 (require 'init-keys)
 
 ;; enhance emacs
@@ -23,12 +23,5 @@
 (require 'init-dashboard)
 (require 'init-meow)
 (require 'init-org)
-
-;; programming
-(require 'init-code)
-(require 'init-go)
-(require 'init-json)
-(require 'init-elixir)
-(require 'init-rust)
-(require 'init-typescript)
-(require 'init-ruby)
+(require 'init-codes)
+(require 'init-ui)
