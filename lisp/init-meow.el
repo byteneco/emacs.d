@@ -1,5 +1,6 @@
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  (add-to-list 'meow-mode-state-list '(lsp-bridge-ref-mode . motion))
   (meow-motion-overwrite-define-key
    '("<escape>" . ignore))
   (meow-leader-define-key
@@ -106,9 +107,9 @@
 (use-package meow
   :config
   (setq meow-expand-hint-counts
-    '((line . 30)
-      (find . 30)
-      (till . 30)))
+	'((line . 30)
+	  (find . 30)
+	  (till . 30)))
   (meow-setup)
   (meow-global-mode)
   )

@@ -1,10 +1,9 @@
 (use-package go-mode
   :straight t
   :hook
-  (before-save . gofmt-before-save)
   (go-mode . (lambda ()
 	       (setq indent-tabs-mode nil)
-	       (setq tab-width 4)))
+	       (setq tab-width 2)))
   :config
   (setq gofmt-command "goimports")
   )
