@@ -6,7 +6,6 @@
 (setq process-adaptive-read-buffering nil)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "lisp/codes" user-emacs-directory))
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'use-package)
@@ -19,6 +18,7 @@
 ;; enhance emacs
 (require 'init-workspace)
 (require 'init-minibuffer)
+(require 'init-autocomplete)
 (require 'init-project)
 (require 'init-dashboard)
 (require 'init-meow)
