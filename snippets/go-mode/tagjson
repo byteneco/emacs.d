@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: tagjson
-# key: tagjson
-# --
-`json:"$1"`

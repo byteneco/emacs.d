@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: tagjson
+# key: json
+# --
+\`json:"`(go-snippet-json-field)`"$1\`

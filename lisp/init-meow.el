@@ -62,7 +62,7 @@
    '("h" . meow-left)
    '("H" . meow-left-expand)
    '("i" . meow-insert)
-   '("I" . lsp-bridge-find-impl)
+   '("I" . ignore)
    '("j" . meow-next)
    '("J" . meow-next-expand)
    '("k" . meow-prev)
@@ -106,9 +106,9 @@
 (use-package meow
   :config
   (setq meow-expand-hint-counts
-	'((line . 30)
-	  (find . 30)
-	  (till . 30)))
+				'((line . 30)
+					(find . 30)
+					(till . 30)))
   (meow-setup)
   (meow-global-mode)
   )

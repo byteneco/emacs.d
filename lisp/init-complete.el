@@ -11,9 +11,39 @@
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
   :bind (:map minibuffer-local-map
-         ("M-A" . marginalia-cycle))
+							("M-A" . marginalia-cycle))
   :init
-(marginalia-mode))
+	(marginalia-mode))
+
+(use-package corfu
+  ;; Optional customizations
+  :custom
+  (corfu-auto t)
+  (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+  ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
+  (corfu-preview-current nil)    ;; Disable current candidate preview
+  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+  ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
+
+  ;; :bind
+  ;; (:map corfu-map
+  ;; ("TAB" . corfu-next)
+  ;; ([tab] . corfu-next)
+  ;; ("S-TAB" . corfu-previous)
+  ;; ([backtab] . corfu-previous))
+  
+  ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
+  ;; :hook ((prog-mode . corfu-mode)
+  ;;        (shell-mode . corfu-mode)
+  ;;        (eshell-mode . corfu-mode))
+
+  ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
+  ;; be used globally (M-/).  See also the customization variable
+  ;; `global-corfu-modes' to exclude certain modes.
+  :init
+  (global-corfu-mode))
+
 
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
@@ -44,7 +74,7 @@
          ("M-g e" . consult-compile-error)
          ("M-g f" . consult-flymake)            ;; Alternative: consult-flycheck
          ("M-g g" . consult-goto-line)             ;; orig. goto-line
-	 ("s-l" . consult-goto-line)               ;; orig. goto-line
+				 ("s-l" . consult-goto-line)               ;; orig. goto-line
          ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
          ("M-g m" . consult-mark)
          ("M-g k" . consult-global-mark)
@@ -136,4 +166,4 @@
   ;; (setq consult-project-function nil)
   )
 
-(provide 'init-minibuffer)
+(provide 'init-complete)

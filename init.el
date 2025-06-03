@@ -17,8 +17,7 @@
 
 ;; enhance emacs
 (require 'init-workspace)
-(require 'init-minibuffer)
-(require 'init-autocomplete)
+(require 'init-complete)
 (require 'init-project)
 (require 'init-dashboard)
 (require 'init-meow)

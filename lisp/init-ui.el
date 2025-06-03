@@ -4,7 +4,7 @@
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-palenight t)
+  (load-theme 'doom-nord-aurora t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -15,5 +15,12 @@
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
+
+(use-package doom-modeline
+  :init (doom-modeline-mode 1))
+
+(use-package nerd-icons
+	:config
+	(set-frame-font "CodeNewRoman Nerd Font Mono 16" nil t))
 
 (provide 'init-ui)

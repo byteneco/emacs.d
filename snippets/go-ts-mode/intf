@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: interface
-# key: tinterface
+# key: intf
 # --
 type ${1:name} interface {
   $0

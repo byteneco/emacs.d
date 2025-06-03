@@ -6,10 +6,13 @@
 
 (setq make-backup-files nil)
 (global-display-line-numbers-mode 1)
+(add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode 0)))
 (when (display-graphic-p) (toggle-scroll-bar -1))
 (auto-save-visited-mode)
 (electric-pair-mode)
 (set-face-attribute 'default nil :height 140)
+
+(setq dired-create-destination-dirs 'ask)
 
 (use-package avy
   :bind (("C-'" . avy-goto-char-timer))
@@ -20,6 +23,6 @@
 
 (use-package ace-window
   :bind (("C-x o" . 'ace-select-window)
-	 ("C-x C-o" . 'ace-select-window)))
+				 ("C-x C-o" . 'ace-select-window)))
 
 (provide 'init-emacs)

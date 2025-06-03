@@ -33,6 +33,23 @@
 	(setq js-indent-level 2)
   (setq treesit-font-lock-level 4))
 
+(use-package lsp-mode
+	:hook
+	(go-ts-mode . lsp)
+	:bind
+	(("C-\." . lsp-execute-code-action))
+	:custom
+	(lsp-go-use-placeholders 0)
+	:config
+	(setq lsp-completion-provider :none)
+	(setq lsp-headerline-breadcrumb-enable nil))
+
+(use-package thrift)
+
+(use-package lsp-ui)
+
+(use-package flycheck)
+
 (use-package apheleia
   :config
   (apheleia-global-mode +1))
