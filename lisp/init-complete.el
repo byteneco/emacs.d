@@ -3,6 +3,8 @@
   (vertico-mode))
 
 (use-package orderless
+	:custom
+	(orderless-component-separator " +\\|[-_/]")
   :init
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
@@ -15,35 +17,17 @@
   :init
 	(marginalia-mode))
 
+(use-package cape)
+
 (use-package corfu
-  ;; Optional customizations
   :custom
-  (corfu-auto t)
-  (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
-  ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
-  (corfu-preview-current nil)    ;; Disable current candidate preview
-  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
-  ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
-
+  (corfu-auto t)          ;; Enable auto completion
+  (corfu-separator ?_) ;; Set to orderless separator, if not using space
   ;; :bind
-  ;; (:map corfu-map
-  ;; ("TAB" . corfu-next)
-  ;; ([tab] . corfu-next)
-  ;; ("S-TAB" . corfu-previous)
-  ;; ([backtab] . corfu-previous))
-  
-  ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
-  ;; :hook ((prog-mode . corfu-mode)
-  ;;        (shell-mode . corfu-mode)
-  ;;        (eshell-mode . corfu-mode))
-
-  ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
-  ;; be used globally (M-/).  See also the customization variable
-  ;; `global-corfu-modes' to exclude certain modes.
+  ;; Another key binding can be used, such as S-SPC.
+  ;; (:map corfu-map ("SPC" . corfu-insert-separator))
   :init
   (global-corfu-mode))
-
 
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.

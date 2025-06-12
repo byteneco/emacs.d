@@ -36,10 +36,23 @@
 (use-package lsp-mode
 	:hook
 	(go-ts-mode . lsp)
+	(lsp-completion-mode . my/lsp-mode-setup-completion)
 	:bind
 	(("C-\." . lsp-execute-code-action))
 	:custom
-	(lsp-go-use-placeholders 0)
+	(lsp-go-use-placeholders nil)
+	:init
+  (defun my/orderless-dispatch-flex-first (_pattern index _total)
+    (and (eq index 0) 'orderless-flex))
+
+  (defun my/lsp-mode-setup-completion ()
+    (setf (alist-get 'styles (alist-get 'lsp-capf completion-category-defaults))
+          '(orderless))
+    ;; Optionally configure the first word as flex filtered.
+		(setq-local orderless-style-dispatchers '(my/orderless-dispatch-flex-first))
+		;; Optionally configure the cape-capf-buster.
+		(setq-local completion-at-point-functions (list (cape-capf-buster #'lsp-completion-at-point)))
+		)
 	:config
 	(setq lsp-completion-provider :none)
 	(setq lsp-headerline-breadcrumb-enable nil))
@@ -51,22 +64,26 @@
 (use-package flycheck)
 
 (use-package apheleia
-  :config
-  (apheleia-global-mode +1))
+	:config
+	(apheleia-global-mode +1))
+
+(use-package yasnippet
+	:config
+	(yas-global-mode 1))
 
 (use-package magit)
 
 (use-package diff-hl
-  :init
-  (global-diff-hl-mode)
-  (global-diff-hl-show-hunk-mouse-mode)
+	:init
+	(global-diff-hl-mode)
+	(global-diff-hl-show-hunk-mouse-mode)
 
-  :custom-face
-  (diff-hl-insert ((t (:foreground "#b8bb26" :background "#b8bb26"))))
-  (diff-hl-delete ((t (:foreground "#fb4934" :background "#e74c3c"))))
-  (diff-hl-change ((t (:foreground "#3a81c3" :background "#3a81c3"))))
-  :hook
-  (magit-pre-refresh . diff-hl-magit-pre-refresh)
-  (magit-post-refresh . diff-hl-magit-post-refresh))
+	:custom-face
+	(diff-hl-insert ((t (:foreground "#b8bb26" :background "#b8bb26"))))
+	(diff-hl-delete ((t (:foreground "#fb4934" :background "#e74c3c"))))
+	(diff-hl-change ((t (:foreground "#3a81c3" :background "#3a81c3"))))
+	:hook
+	(magit-pre-refresh . diff-hl-magit-pre-refresh)
+	(magit-post-refresh . diff-hl-magit-post-refresh))
 
 (provide 'init-codes)
