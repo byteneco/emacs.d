@@ -18,13 +18,19 @@
 					(toml "https://github.com/tree-sitter/tree-sitter-toml")
 					(tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src") ;; v0.20.3
 					(typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src") ;; v0.20.3
+					(heex "https://github.com/phoenixframework/tree-sitter-heex")
 					(yaml "https://github.com/ikatyang/tree-sitter-yaml")))
   :mode
   (("\\.ts\\'" . typescript-ts-mode)
    ("\\.tsx\\'" . tsx-ts-mode)
    ("\\.js\\'" . js-ts-mode)
+	 ("\\.ex\\'" . elixir-ts-mode)
+	 ("\\.heex\\'" . heex-ts-mode)
+	 ("\\.exs\\'" . elixir-ts-mode)
    ("\\.go\\'" . go-ts-mode))
   :hook
+	(heex-ts-mode . (lambda ()
+										(setq tab-width 2)))
   (prog-mode . (lambda ()
 								 (setq tab-width 2)))
   :config
@@ -36,10 +42,12 @@
 (use-package lsp-mode
 	:hook
 	(go-ts-mode . lsp)
+	(heex-ts-mode . lsp)
 	(lsp-completion-mode . my/lsp-mode-setup-completion)
 	:bind
 	(("C-\." . lsp-execute-code-action))
 	:custom
+	(lsp-lens-enable t)
 	(lsp-go-use-placeholders nil)
 	:init
   (defun my/orderless-dispatch-flex-first (_pattern index _total)
